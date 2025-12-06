@@ -1,0 +1,265 @@
+/* Professional Theme - Light Version */
+
+.contact-pro-wrapper {
+    min-height: 100vh;
+    background: #f8fafc;
+    /* Light Slate BG */
+    padding: 120px 0 80px;
+    color: #1e293b;
+    /* Slate 800 Text */
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+.pro-bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Subtle dot pattern for light theme */
+    background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.5;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.pro-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+}
+
+.pro-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.pro-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #0f172a;
+    /* Slate 900 */
+    margin-bottom: 0.5rem;
+}
+
+.pro-subtitle {
+    font-size: 1.1rem;
+    color: #64748b;
+    /* Slate 500 */
+}
+
+.pro-card {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    /* Softer shadow */
+}
+
+/* Left: Form */
+.pro-form-section {
+    padding: 3rem;
+    border-right: 1px solid #e2e8f0;
+}
+
+.pro-form-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 2rem;
+}
+
+.pro-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group-pro {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group-pro label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #475569;
+    /* Slate 600 */
+}
+
+.form-group-pro input,
+.form-group-pro textarea,
+.form-group-pro select {
+    background: #f8fafc;
+    /* Very light slate input bg */
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    color: #1e293b;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.2s;
+    outline: none;
+}
+
+.form-group-pro input:focus,
+.form-group-pro textarea:focus,
+.form-group-pro select:focus {
+    border-color: #4f46e5;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.pro-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.2rem;
+}
+
+.btn-pro-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    background: #4f46e5;
+    /* Indigo remains strong */
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 1rem;
+}
+
+.btn-pro-submit:hover {
+    background: #4338ca;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+}
+
+/* Right: Info */
+.pro-info-section {
+    background: #f1f5f9;
+    /* Slate 100 for contrast */
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.info-block h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+}
+
+.info-text {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.info-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.icon-wrapper {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    /* White bg for icons on light card */
+    color: #4f46e5;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    /* Subtle lift */
+}
+
+.info-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.info-content .label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #94a3b8;
+    /* Lighter text for labels */
+    text-transform: uppercase;
+}
+
+.info-content .value {
+    font-size: 1rem;
+    color: #334155;
+    /* Darker for values */
+    font-weight: 500;
+}
+
+.map-placeholder {
+    margin-top: 3rem;
+    height: 150px;
+    background: #e2e8f0;
+    border-radius: 12px;
+    border: 1px dashed #cbd5e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .pro-card {
+        grid-template-columns: 1fr;
+    }
+
+    .pro-form-section {
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .pro-form-section,
+    .pro-info-section {
+        padding: 2rem;
+    }
+}

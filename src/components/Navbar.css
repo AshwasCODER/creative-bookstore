@@ -1,0 +1,292 @@
+.navbar {
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow-md);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0.8rem 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navbar-logo span {
+    color: var(--accent-color);
+}
+
+.navbar-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent-color);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.search-bar:focus-within {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(230, 126, 34, 0.1);
+}
+
+.search-input {
+    border: none;
+    background: transparent;
+    outline: none;
+    margin-left: 0.5rem;
+    color: var(--text-color);
+    font-family: var(--font-main);
+    width: 150px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-btn:hover {
+    color: var(--accent-color);
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mobile Navigation */
+.mobile-theme-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .navbar-container {
+        padding: 0 1.5rem;
+    }
+
+    /* Hide the header toggle on mobile */
+    .theme-toggle {
+        display: none !important;
+    }
+
+    .mobile-theme-toggle {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        color: var(--text-color);
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.4s ease 0.6s;
+        /* Delayed entrance */
+    }
+
+    .navbar-links.active .mobile-theme-toggle {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .mobile-theme-toggle span {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .navbar-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+        z-index: 999;
+    }
+
+    [data-theme="dark"] .navbar-links {
+        background: rgba(15, 23, 42, 0.4);
+    }
+
+    .navbar-links.active {
+        opacity: 1;
+        visibility: visible;
+        right: 0;
+        /* Reset right since we use left:0 now */
+    }
+
+    /* Backdrop for mobile menu - Removed as the menu itself is the backdrop now */
+    .navbar-links.active::before {
+        display: none;
+    }
+
+    .nav-link {
+        font-size: 2rem;
+        /* Larger touch targets */
+        font-weight: 700;
+        letter-spacing: -1px;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.4s ease;
+    }
+
+    .navbar-links.active .nav-link {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Stagger animation for links */
+    .navbar-links.active .nav-link:nth-child(1) {
+        transition-delay: 0.1s;
+    }
+
+    .navbar-links.active .nav-link:nth-child(2) {
+        transition-delay: 0.2s;
+    }
+
+    .navbar-links.active .nav-link:nth-child(3) {
+        transition-delay: 0.3s;
+    }
+
+    .navbar-links.active .nav-link:nth-child(4) {
+        transition-delay: 0.4s;
+    }
+
+    .navbar-links.active .nav-link:nth-child(5) {
+        transition-delay: 0.5s;
+    }
+
+    /* Search Bar in Mobile (Optional: Hide or adjust) */
+    .search-bar {
+        display: none;
+        /* For now, hide search on mobile as typically requested to keep it clean, or could be moved elsewhere */
+    }
+
+    /* Hamburger Menu Styles */
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+        /* Above the menu */
+        padding: 0;
+    }
+
+    .hamburger-menu .bar {
+        width: 100%;
+        height: 3px;
+        background-color: var(--text-color);
+        border-radius: 10px;
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    /* Hamburger Animation */
+    .navbar-links.active~.navbar-actions .hamburger-menu .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+
+    .navbar-links.active~.navbar-actions .hamburger-menu .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar-links.active~.navbar-actions .hamburger-menu .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+}
