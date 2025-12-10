@@ -6,7 +6,7 @@ Creative Bookstore is a beautifully designed, responsive, and user-friendly web 
 
 🌐 Live Demo
 
-👉 https://creative-bookstore.netlify.app
+👉 https://creativebookstore.netlify.app/
 
 📦 Repository
 
